@@ -50,7 +50,7 @@ pipeline {
 
             echo "Stopping Tomcat..."
             #ssh ${PROD_USER}@${PROD_HOST} "sudo systemctl stop tomcat"
-             ${TOMCAT_BIN}/shutdown.sh
+            ssh ${PROD_USER}@${PROD_HOST} "${TOMCAT_BIN}/shutdown.sh"
             echo "Removing old deployment..."
             ssh ${PROD_USER}@${PROD_HOST} "rm -rf ${TOMCAT_WEBAPPS}/${APP_NAME} ${TOMCAT_WEBAPPS}/${APP_NAME}.war"
 
@@ -59,7 +59,7 @@ pipeline {
 
             echo "Starting Tomcat..."
             #ssh ${PROD_USER}@${PROD_HOST} "sudo systemctl start tomcat"
-            ${TOMCAT_BIN}/startup.sh
+            ssh ${PROD_USER}@${PROD_HOST} "${TOMCAT_BIN}/startup.sh"
           '''
         }
       }
