@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    GIT_REPO       = 'https://github.com/santosh-perscitussln/eclips-demo/tree/master/git-Demo.git'
+    GIT_REPO       = 'https://github.com/santosh-perscitussln/eclips-demo/git-Demo.git'
     BRANCH         = 'master'
     GIT_CRED_ID    = 'github-pat'   // Add PAT credentials in Jenkins
     PROD_HOST      = '3.85.162.30'
