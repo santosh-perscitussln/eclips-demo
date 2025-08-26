@@ -24,7 +24,9 @@ pipeline {
 
     stage('Build WAR') {
       steps {
+        dir('git-Demo') {
         sh 'mvn -B -DskipTests clean package'
+      }
       }
       post {
         success {
