@@ -31,7 +31,7 @@ pipeline {
       }
       post {
         success {
-          archiveArtifacts artifacts: 'target/*.war', fingerprint: true
+          archiveArtifacts artifacts: 'git-Demo/target/*.war', fingerprint: true
         }
       }
     }
@@ -40,7 +40,7 @@ pipeline {
       steps {
         sshagent(credentials: [env.PROD_CRED_ID]) {
           sh '''
-            WAR_FILE=$(ls target/*.war | head -n1)
+            WAR_FILE=$(ls git-Demo/target/*.war | head -n1)
             APP_WAR="${APP_NAME}.war"
 
             mkdir -p ~/.ssh
