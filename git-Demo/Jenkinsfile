@@ -12,6 +12,7 @@ pipeline {
     APP_NAME       = 'pipeline-examples'
     APP_PORT       = '8085'   // Change if Tomcat runs on 8085
   }
+  
 
   stages {
     stage('Checkout') {
